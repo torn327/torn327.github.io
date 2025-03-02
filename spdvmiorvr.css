@@ -1,0 +1,43 @@
+/* Full-page styling */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    margin: 0;
+    background-color: #0a0a0a; /* Dark background */
+    color: #dcdcdc; /* Soft gray text */
+    font-family: 'Courier New', monospace;
+    position: relative;
+    overflow: hidden; /* Prevents scrolling */
+}
+
+/* Subtle glowing text effect */
+.glowing-text {
+    font-size: 28px;
+    font-weight: normal;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 
+                 0 0 20px rgba(255, 255, 255, 0.15), 
+                 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+/* Slight pulse animation for an eerie effect */
+@keyframes glowPulse {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 
+                     0 0 20px rgba(255, 255, 255, 0.15), 
+                     0 0 30px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 
+                     0 0 25px rgba(255, 255, 255, 0.2), 
+                     0 0 35px rgba(255, 255, 255, 0.15);
+    }
+}
+
+/* Apply pulse effect to the numbers */
+.glowing-text.pulsing {
+    animation: glowPulse 3s ease-in-out infinite;
+}
