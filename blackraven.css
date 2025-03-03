@@ -1,0 +1,43 @@
+/* Full-page styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0a0a0a; /* Dark background */
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Stylized image with subtle breathing effect */
+.glowing-image {
+    max-width: 75%;
+    max-height: 75vh;
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6), /* Soft glow */
+                0 0 30px rgba(0, 0, 0, 0.4); 
+    filter: brightness(95%) contrast(105%) saturate(110%); /* Base look */
+    transition: box-shadow 5s ease-in-out, filter 5s ease-in-out, transform 5s ease-in-out; /* Smooth breathing */
+    
+    /* More subtle breathing animation */
+    animation: breathe 5s infinite ease-in-out;
+}
+
+/* Breathing effect keyframes */
+@keyframes breathe {
+    0% { 
+        filter: brightness(95%) contrast(105%) saturate(110%); 
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.4); 
+        transform: scale(1);
+    }
+    50% { 
+        filter: brightness(98%) contrast(108%) saturate(112%); 
+        box-shadow: 0 0 18px rgba(0, 0, 0, 0.65), 0 0 34px rgba(0, 0, 0, 0.45); 
+        transform: scale(1.02); /* Slight growth */
+    }
+    100% { 
+        filter: brightness(95%) contrast(105%) saturate(110%); 
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.4); 
+        transform: scale(1);
+    }
+}
